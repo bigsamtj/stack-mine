@@ -1,4 +1,4 @@
-/* Company pages: reveal, tabs, spotlight, delivery console, referral estimator. Content is in the HTML; this only enhances it. */
+/* HELIOS SYSTEMS homepage behaviours: reveal, tabs, spotlight. Content is in the HTML; this only enhances it. */
 (function () {
   var doc = document, root = doc.documentElement;
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;

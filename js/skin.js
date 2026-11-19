@@ -1,4 +1,4 @@
-/* Stack18 skin behaviours: scroll reveal, card spotlight, read-more for long prose. No dependencies. */
+/* HELIOS SYSTEMS skin behaviours: scroll reveal, card spotlight, read-more for long prose. No dependencies. */
 (function(){
   var d=document,root=d.documentElement,main=d.querySelector('main');if(!main)return;
   root.classList.add('sk-js');
