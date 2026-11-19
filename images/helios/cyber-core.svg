@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Faceted security shield representing the cybersecurity core">
+  <defs>
+    <linearGradient id="s" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7BDF89"/><stop offset=".45" stop-color="#217326"/><stop offset="1" stop-color="#003619"/>
+    </linearGradient>
+    <linearGradient id="face" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5CFFBE" stop-opacity=".28"/><stop offset="1" stop-color="#003619" stop-opacity=".05"/>
+    </linearGradient>
+    <filter id="gl"><feGaussianBlur stdDeviation="10"/></filter>
+  </defs>
+  <rect width="640" height="480" rx="28" fill="#051628"/>
+  <circle cx="320" cy="240" r="170" fill="#217326" opacity=".18" filter="url(#gl)"/>
+  <g fill="none" stroke="#5CFFBE" stroke-opacity=".16">
+    <circle cx="320" cy="240" r="190"/><circle cx="320" cy="240" r="150" stroke-dasharray="2 10"/>
+  </g>
+  <path d="M320 74 470 130v122c0 80-62 137-150 166-88-29-150-86-150-166V130z" fill="url(#s)" opacity=".92"/>
+  <path d="M320 96 448 143v107c0 66-51 115-128 143-77-28-128-77-128-143V143z" fill="#051628" opacity=".72"/>
+  <g fill="url(#face)" stroke="#5CFFBE" stroke-opacity=".55" stroke-width="1">
+    <path d="M320 108 420 146 320 240z"/><path d="M320 108 220 146 320 240z"/>
+    <path d="M220 146 320 240 220 301z"/><path d="M420 146 320 240 420 301z"/>
+    <path d="M220 301 320 240 320 393z"/><path d="M420 301 320 240 320 393z"/>
+  </g>
+  <g fill="none" stroke="#5CFFBE" stroke-width="1.6" stroke-linecap="round" opacity=".9">
+    <path d="M244 252h46l22-26 26 52 22-26h36"/>
+  </g>
+  <circle cx="320" cy="240" r="7" fill="#FFDC5A"/>
+  <g fill="#5CFFBE" opacity=".55">
+    <circle cx="98" cy="126" r="3"/><circle cx="544" cy="118" r="3"/><circle cx="82" cy="352" r="3"/><circle cx="556" cy="360" r="3"/>
+  </g>
+</svg>

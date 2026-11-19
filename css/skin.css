@@ -1,4 +1,4 @@
-/* Stack18 site-wide skin: brings the futuristic "cw" design (company + home pages) to the older page templates.
+/* HELIOS SYSTEMS site-wide skin: brings the futuristic "cw" design (company + home pages) to the older page templates.
    Loaded after each page's own CSS. Families covered: .a-hero / .page-hero, .so-hero, .mph-hero. */
 :root{--glow:#F2A93B;--glow2:#8FA4FF;--glass:rgba(255,255,255,.04);--glass-b:rgba(255,255,255,.1)}
 @property --a{syntax:"<angle>";inherits:false;initial-value:0deg}

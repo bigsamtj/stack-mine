@@ -1,96 +1,97 @@
-# Stack18 — front-end mirror
+# HELIOS SYSTEMS — corporate website
 
-Static front-end snapshot of **https://www.stack18.com/**, mirrored on **2026-11-18**.
+Static institutional website for **HELIOS SYSTEMS**: Building the Intelligence
+Architecture of the Digital Age. *Fast, Smart & Limitless.*
 
-This is the site's original HTML, CSS, JavaScript, fonts and local images — no
-backend, database, build system or framework bundle. The site is a hand-built
-multi-page static site (server-rendered HTML, plain CSS and plain JS); there is
-no React/Next/Vue/Angular app here.
+Built on the original front-end design foundation: plain HTML, CSS and
+JavaScript, with no framework, build step or database required to run.
 
-## Run it
+See `TRANSFORMATION_REPORT.md` for the full page mapping, testing results and
+remaining configuration items.
 
-All pages use absolute root paths (`/css/...`, `/js/...`, `/images/...`), so the
-folder must be served from its root. Opening `index.html` directly with
-`file://` will not load the styles or scripts.
+## Run locally
+
+All pages use absolute root paths (`/css/...`, `/js/...`, `/images/...`), so
+serve the folder itself as the document root:
 
 ```bash
 cd ~/Downloads/stack18-site
 python3 -m http.server 8000
 ```
 
-Then open: <http://localhost:8000/>
+Open <http://localhost:8000/>.
 
-Any static server works (nginx, Caddy, `npx serve`, etc.), as long as this
-directory is the document root.
+## Structure
 
-## Contents
+| Path | Purpose |
+|---|---|
+| `/` | Institutional homepage |
+| `/about`, `/our-story`, `/vision-mission`, `/philosophy` | Corporate identity |
+| `/organisation`, `/leadership`, `/team` | Structure and people |
+| `/divisions` | Six-division architecture |
+| `/cybersecurity`, `/cybersecurity/*` | Division 01 and category pages |
+| `/services`, `/services/*` | 26 operational services |
+| `/intelligence`, `/intelligence/*` | Division 02 |
+| `/academy`, `/academy/*` | Helios Academy (live) |
+| `/big-sam-academy`, `/big-sam-academy/*` | Division 04 |
+| `/software-systems`, `/software-systems/*` | Division 05 |
+| `/platforms`, `/platforms/*` | NeuroBridge, NeuroMap, Phantom Eye, Noctalon, Nexus, Academy platforms |
+| `/consulting`, `/consulting/*` | Division 06 |
+| `/industries`, `/industries/*` | Sector application |
+| `/research`, `/research/whitepaper`, `/research/agenda` | Research and official whitepaper |
+| `/insights`, `/insights/*` | Editorial briefings |
+| `/newsroom`, `/events`, `/resources`, `/glossary` | News, events, resources, knowledge centre |
+| `/contact`, `/careers`, `/partnerships`, `/legal`, `/privacy-policy`, `/terms-of-service`, `/security` | Engagement and policies |
+| `/sitemap` | Complete HTML sitemap |
 
-| Item | Count | Notes |
-|---|---:|---|
-| HTML pages | 3,340 | All 3,339 sitemap URLs + `/marketplace/search` |
-| CSS files | 18 | `css/*.css` |
-| JavaScript files | 17 | `js/*.js` |
-| Fonts | 3 | Inter + Lora (WOFF2) in `fonts/` |
-| Local images | 3,349 | Logos, art, team photos, per-page OG images in `images/` |
-| Other | 4 | `robots.txt`, `sitemap.xml`, `site.webmanifest`, favicons |
-| **Total** | **6,731 site files** | **~339 MiB** (+ this README) |
+## Configuration
 
-URLs are stored as directory indexes, matching the live site's extensionless
-URLs:
+Central configuration lives in `js/site.config.js`:
 
-```
-/about                 -> about/index.html
-/services/web-development -> services/web-development/index.html
-/                       -> index.html
-```
+- `domain` — official production domain (empty until confirmed)
+- `companyEmail`, `phone`, `officeAddress` — official contact details
+- `social` — official profiles
+- `academyPortalUrl`, `bigSamAcademyPortalUrl` — future portal URLs
+- `contactEndpoint`, `newsletterEndpoint` — form delivery endpoints
 
-Asset links still carry the original cache-busting query strings
-(`/css/style.css?v=20261112d`). Assets are stored without the query string;
-normal static servers ignore it and serve the file correctly.
+Empty values are handled deliberately: portal links fall back to local
+coming-soon pages, contact details are not fabricated, and forms explicitly
+state that nothing was sent when no endpoint is configured. When the domain is
+set, run `python3 tools/build_sitemap.py` to generate `sitemap.xml` with
+absolute URLs.
 
-## Key files
+## Deployment note
 
-- `css/style.css` — core design system / global layout (largest stylesheet)
-- `css/nav.css`, `css/pages-plus.css`, `css/skin.css` — navigation, page blocks, theme
-- `css/company.css`, `css/marketplace.css`, `css/glossary.css`, etc. — page-specific styles
-- `js/main.js`, `js/nav.js`, `js/skin.js` — core interactions, nav, light/dark theme
-- `js/picker.js`, `js/lead-popup.js`, `js/s18-chat.js` — interactive widgets
-- `js/marketplace.js`, `js/glossary.js`, `js/listing.js`, etc. — page-specific behaviour
+The original legacy pages that are not part of the HELIOS architecture were
+moved, not deleted, to:
 
-## What is intentionally missing
+`~/Downloads/stack18-legacy-pages/`
 
-Backend and private paths excluded in line with `robots.txt`:
+They remain available for reference and recovery outside this website root.
 
-- `/contact-handler.php` — contact form submit handler
-- `/chat-handler.php`, `/chat/` — "Ask Sia" chat
-- `/marketplace-data/` — marketplace search/filter data
-- `/crm/`, `/tools/`
+## Content status
 
-As a result, locally the contact forms, chat widget, and marketplace search/filter
-will not complete requests. The pages themselves and all local styling/scripts
-are intact.
+- Helios Academy is live; VERITAS Cohort 1 (Digital Forensics) runs 12 October
+  to 5 December 2026, free of charge, with over 100 registrations.
+- Ethical Hacking and Cloud Security are defined specialisations with cohort
+  dates to be announced.
+- NeuroBridge, Phantom Eye, Noctalon, Nexus and the Big Sam Academy Platform are
+  in development; NeuroMap is under refinement; the Helios Academy Platform is
+  in use for Academy delivery.
+- No production domain, company email or telephone is yet confirmed.
 
-External resources are still hot-linked (as on the live site):
+## Design
 
-- `www.googletagmanager.com` — Google Analytics/GTM
-- `img.logo.dev` — vendor logos on marketplace pages
-- `images.unsplash.com` — hero/photography images
-- LinkedIn, Instagram, WhatsApp links
+- `css/style.css` — original core design system
+- `css/company.css` — homepage components
+- `css/nav.css` — mega-menu
+- `css/pages-plus.css`, `css/skin.css` — existing page blocks and interactions
+- `css/helios.css` — HELIOS hybrid identity layer (official palette)
+- `js/nav.js`, `js/skin.js`, `js/company.js`, `js/main.js` — existing interactions
+- `js/site.config.js`, `js/helios.js` — configuration and honest form handling
 
-Without internet access those remote images/scripts will not load, but the local
-layout and navigation still work.
+## Content policy
 
-## Verification performed
-
-- 3,339/3,339 sitemap pages present, plus `/marketplace/search`
-- 65,204 local asset references checked — **0 missing**
-- 836,748 internal page links checked — **0 missing**
-- 0 unresolved CSS `url()` / `@import` references
-- Homepage, `/about/`, a marketplace profile and `/marketplace/search` rendered in
-  headless Chromium against a local static server; CSS, JS, fonts and local images
-  all loaded
-
-## Note
-
-The code and content are © Stack18. This copy was made for local reference and
-analysis of the site's front-end. Don't redeploy or republish it as your own.
+Development-stage capabilities are labelled. No client relationships,
+certifications, press coverage, personnel or contact details are fabricated.
+Where a fact is not confirmed, the site says so.

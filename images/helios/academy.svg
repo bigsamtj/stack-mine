@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Helios Academy learning architecture">
+  <defs>
+    <linearGradient id="ab" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0A2B3A"/><stop offset="1" stop-color="#051628"/>
+    </linearGradient>
+    <linearGradient id="pg" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F8FFFB"/><stop offset="1" stop-color="#DFF7E8"/>
+    </linearGradient>
+    <linearGradient id="ln" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#217326"/><stop offset="1" stop-color="#5CFFBE"/>
+    </linearGradient>
+    <filter id="bl"><feGaussianBlur stdDeviation="12"/></filter>
+  </defs>
+  <rect width="640" height="480" rx="28" fill="url(#ab)"/>
+  <circle cx="320" cy="250" r="180" fill="#217326" opacity=".2" filter="url(#bl)"/>
+  <g opacity=".35" stroke="#5CFFBE" fill="none">
+    <circle cx="320" cy="250" r="150"/><circle cx="320" cy="250" r="108" stroke-dasharray="2 9"/>
+  </g>
+  <g transform="translate(120 130)">
+    <path d="M0 40 200 0l200 40v190L200 270 0 230z" fill="#07231E" stroke="#217326" stroke-width="1.4"/>
+    <path d="M200 62 374 24v188L200 250z" fill="url(#pg)"/>
+    <path d="M200 62 26 24v188l174 38z" fill="#F4FBF7"/>
+    <path d="M200 62v188" stroke="#7BDF89" stroke-width="2" opacity=".6"/>
+    <g stroke="#217326" stroke-opacity=".28" stroke-width="2">
+      <path d="M52 62 168 82M52 94 168 114M52 126 168 146M52 158 168 178M52 190 144 206"/>
+    </g>
+    <g stroke="#217326" stroke-opacity=".22" stroke-width="2">
+      <path d="M232 82 348 62M232 114 348 94M232 146 348 126M232 178 348 158M232 210 320 190"/>
+    </g>
+    <g fill="none" stroke="url(#ln)" stroke-width="2">
+      <path d="M200 0v-28M140 10 120-14M260 10 280-14"/>
+    </g>
+    <g fill="#5CFFBE">
+      <circle cx="200" cy="-30" r="5"/><circle cx="118" cy="-16" r="4"/><circle cx="282" cy="-16" r="4"/>
+    </g>
+  </g>
+  <g fill="#5CFFBE" font-family="Inter, sans-serif" font-size="10" letter-spacing="2" opacity=".7">
+    <text x="48" y="448">THEORY</text><text x="230" y="448">SIMULATION</text><text x="430" y="448">OPERATIONS</text>
+  </g>
+</svg>

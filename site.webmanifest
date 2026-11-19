@@ -1,6 +1,11 @@
 {
-  "name": "Stack18",
-  "short_name": "Stack18",
+  "name": "HELIOS SYSTEMS",
+  "short_name": "HELIOS",
+  "description": "Building the Intelligence Architecture of the Digital Age. Fast, Smart & Limitless.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#051628",
+  "theme_color": "#051628",
   "icons": [
     {
       "src": "/images/icon-192.png",
@@ -12,8 +17,5 @@
       "sizes": "512x512",
       "type": "image/png"
     }
-  ],
-  "theme_color": "#0B1426",
-  "background_color": "#0B1426",
-  "display": "browser"
+  ]
 }
